@@ -1,11 +1,9 @@
 package squanalyze2;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
 import java.awt.BorderLayout;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
@@ -19,7 +17,6 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 
 public class Feedback {
-
 	JFrame frame;
 	private JTextField FBP1;
 	private JTextField FBP2;

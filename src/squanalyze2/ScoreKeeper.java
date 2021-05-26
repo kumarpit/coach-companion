@@ -1,23 +1,17 @@
 package squanalyze2;
 
 import java.awt.EventQueue;
-
-
 import javax.swing.JFrame;
 import javax.swing.JSplitPane;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-
-
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -25,11 +19,6 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
-
-
-
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -42,14 +31,11 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
-
-
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 @SuppressWarnings("unused")
 public class ScoreKeeper {
-
 	public JFrame frame;
 	JLabel P1Lbl;
 	int countt=0;
@@ -159,9 +145,7 @@ public class ScoreKeeper {
 				
 			}
 		}
-	
-	
-	
+
 	String mp2;
 	String wp2;
 	String lp2;
@@ -181,48 +165,42 @@ public class ScoreKeeper {
 		
 	}
 	
-	private void writeToExcel() throws IOException {
-		
-//		XSSFWorkbook wb = new XSSFWorkbook();
-//		XSSFSheet ws = wb.createSheet();
-//		TreeMap<String, Object[]> data = new TreeMap<>();
-//		
-//		
-//		for(int i=0; i<model.getRowCount(); i++) {
-//			data.put(Integer.toString(i), new Object[] {getCellVal(i,0), getCellVal(i,1)});
-//		}
-//		
-//		//data.put("0", new Object[] {model.getColumnName(0), model.getColumnName(1)});
-//		
-//		Set<String> ids =data.keySet();
-//		XSSFRow row;
-//		int rowID = 0;
-//		int cellID = 0;
-//		for(int i = 0; i<model.getRowCount()) {
-//			for(int j = 0; j<model.getColumnCount())
-//			row = ws.createRow(rowID++);
-//			Object[] values = data.get(key);
-//			
-//			for(Object o:values) {
-//				Cell cell = row.createCell(getCellID());
-//				cell.setCellValue(o.toString());
-//			}
-//		}
-//		
-//		try {
-//			FileOutputStream fos = new FileOutputStream(new File("C:\\Users\\LENOVO\\Desktop\\tst\\"+Integer.toString(HomePg.Curr_MatchID)+".xlsx"));
-//			wb.write(fos);
-//			fos.close();
-//		}finally{
-//			
-//		}
-//		
+	// private void writeToExcel() throws IOException {
+	// 	XSSFWorkbook wb = new XSSFWorkbook();
+	// 	XSSFSheet ws = wb.createSheet();
+	// 	TreeMap<String, Object[]> data = new TreeMap<>();
 		
 		
+	// 	for(int i=0; i<model.getRowCount(); i++) {
+	// 		data.put(Integer.toString(i), new Object[] {getCellVal(i,0), getCellVal(i,1)});
+	// 	}
 		
-	}
+	// 	data.put("0", new Object[] {model.getColumnName(0), model.getColumnName(1)});
+		
+	// 	Set<String> ids =data.keySet();
+	// 	XSSFRow row;
+	// 	int rowID = 0;
+	// 	int cellID = 0;
+	// 	for(int i = 0; i<model.getRowCount()) {
+	// 		for(int j = 0; j<model.getColumnCount())
+	// 		row = ws.createRow(rowID++);
+	// 		Object[] values = data.get(key);
+			
+	// 		for(Object o:values) {
+	// 			Cell cell = row.createCell(getCellID());
+	// 			cell.setCellValue(o.toString());
+	// 		}
+	// 	}
+		
+	// 	try {
+	// 		FileOutputStream fos = new FileOutputStream(new File("C:\\Users\\LENOVO\\Desktop\\tst\\"+Integer.toString(HomePg.Curr_MatchID)+".xlsx"));
+	// 		wb.write(fos);
+	// 		fos.close();
+	// 	}finally{
+			
+	// 	}			
+	// }
 
-	
 	private void exportTable(JTable table, File file) throws IOException {
 		FileWriter out = new FileWriter(file);
 		BufferedWriter bw = new BufferedWriter(out);
@@ -240,7 +218,6 @@ public class ScoreKeeper {
 		bw.close();
 	}
 	
-
 	public void updateStatsP2() {
 		
 		try {
@@ -312,7 +289,6 @@ public class ScoreKeeper {
 			
 		}
 	}
-
 	
 	private void getNmee() {
 		PreparedStatement st;
@@ -341,8 +317,6 @@ public class ScoreKeeper {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
-	
 	}
 	
 	private void initialize() {
@@ -353,7 +327,6 @@ public class ScoreKeeper {
 		P1Lbl = new JLabel("P1");
 		P1Lbl.setBounds(34, 26, 241, 14);
 		frame.getContentPane().add(P1Lbl);
-		
 		
 		P2Lbl = new JLabel("P2");
 		P2Lbl.setBounds(34, 175, 241, 14);
@@ -366,15 +339,12 @@ public class ScoreKeeper {
 		model.setColumnIdentifiers(columns);
 		table.setModel(model);
 		
-		
 		P2Score = new JLabel(Integer.toString(P2Scr));
 		P2Score.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		P2Score.setBounds(90, 227, 66, 46);
 		frame.getContentPane().add(P2Score);
 		btnNewButton = new JButton("Winner");
 		btnNewButton.setBackground(Color.GREEN);
-		
-
 		
 		Object [] rows = new Object[2];
 		btnNewButton.addActionListener(new ActionListener() {
@@ -384,8 +354,6 @@ public class ScoreKeeper {
 				rows[1] = Integer.toString(P2Scr);
 				model.addRow(rows);
 				P1Score.setText(Integer.toString(P1Scr));
-				
-				
 				
 				if(P1Scr == 11) {
 					P1Scr = 0;
@@ -548,7 +516,6 @@ public class ScoreKeeper {
 			}
 		});
 		
-		
 		btnNewButton_6.setBounds(46, 344, 89, 23);
 		frame.getContentPane().add(btnNewButton_6);
 		
@@ -567,7 +534,6 @@ public class ScoreKeeper {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				
 				JOptionPane.showMessageDialog(null, "Saved");
 			}
 			

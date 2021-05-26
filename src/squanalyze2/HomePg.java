@@ -59,9 +59,7 @@ import javax.swing.ImageIcon;
 import java.awt.SystemColor;
 
 
-
 public class HomePg extends JFrame{
-
 	private JFrame frame;
 	private JTable table;
 	@SuppressWarnings("rawtypes")
@@ -86,13 +84,12 @@ public class HomePg extends JFrame{
 	}
 	
 	JLabel address;
-	
 	static int noGms;
 	public static int getNoGms() {
 		return noGms;
 	}
+
 	Calendar cal = new GregorianCalendar();
-	
 	Label label_dt;
 
 	public static void main(String[] args) {
@@ -113,7 +110,7 @@ public class HomePg extends JFrame{
 	private JTextField tfAge;
 	private JTextField tfHeight;
 	private JTextField tfWeight;
-	
+
 	double BMIupt;
 	private JTextField textField;
 	private JTextField tfRM;
@@ -161,8 +158,6 @@ public class HomePg extends JFrame{
 		}
 	}
 	
-	
-	
 	public static void ldDataToLB(String query) {
 		try {
 			PreparedStatement ps = connection.prepareStatement (query);
@@ -174,8 +169,7 @@ public class HomePg extends JFrame{
 			e1.printStackTrace();
 		}
 	}
-	
-	
+
 	public static void ldDataToPFA(String query) {
 		try {
 			PreparedStatement ps = connection.prepareStatement (query);
@@ -188,9 +182,6 @@ public class HomePg extends JFrame{
 		}
 	}
 	
-	
-	
-	
 	private void ldDataToSch(String query) {
 		try {
 			PreparedStatement ps = connection.prepareStatement (query);
@@ -202,16 +193,12 @@ public class HomePg extends JFrame{
 		}
 	}
 	
-	
-	
 	private void addDta(String query, String msg) {
 		
 			if(tfName.getText().trim().isEmpty()) {
 				JOptionPane.showMessageDialog(null, "Please re-check your inputs");
 			}
-		
-		
-		
+
 		try {
 			PreparedStatement st = connection.prepareStatement (query);
 				st.setString(1, tfName.getText());
@@ -229,7 +216,6 @@ public class HomePg extends JFrame{
 			JOptionPane.showMessageDialog(null, "Please re-check your inputs");
 		}
 	}
-
 
 	private void addDtaToStats(String query, String msg) {
 		try {
@@ -250,7 +236,6 @@ public class HomePg extends JFrame{
 		}
 	}
 
-	
 	private void getID() {
 		String nm1 = (String) comboboxP1.getSelectedItem();
 		String nm2 = (String) comboboxP2.getSelectedItem();	
@@ -276,9 +261,6 @@ public class HomePg extends JFrame{
 		}
 	}
 	
-	
-	
-	
 	private void makeLineChart(String query, String categ) throws SQLException {
 		JDBCCategoryDataset dataset = new JDBCCategoryDataset(MySQLConnection.dbConnector(), query);
 		JFreeChart chart = ChartFactory.createLineChart(categ + " vs Time " + "for " + nmm, "Time", "Total", dataset, PlotOrientation.VERTICAL, false, true, true);
@@ -289,9 +271,6 @@ public class HomePg extends JFrame{
 		frame.setVisible(true);
 		frame.setSize(450, 500);
 	}
-	
-	
-	
 	
 	private void addMtch(String msg) {
 		getID();
@@ -311,9 +290,6 @@ public class HomePg extends JFrame{
 			e1.printStackTrace();
 		}
 	}
-	
-	
-	
 	
 	private void update(String query, String msg) {
 		try {
@@ -336,9 +312,6 @@ public class HomePg extends JFrame{
 			e1.printStackTrace();
 		}
 	}
-	
-	
-	
 	
 	private void delete(String query, String msg) {
 		try {
@@ -380,7 +353,6 @@ public class HomePg extends JFrame{
 	private JTextField tfSPID;
 	private JTextField tfDate;
 	private JTextField textField_3;
-	
 	
 	public void addDataStats() {
 		
@@ -438,7 +410,6 @@ public class HomePg extends JFrame{
 		}
 	}
 	
-	
 	public static void ldDataToMtchHist(String query) {
 		try {
 			PreparedStatement ps = connection.prepareStatement (query);
@@ -451,7 +422,6 @@ public class HomePg extends JFrame{
 		}
 	}
 	
-	
 	public HomePg() {
 		connection = MySQLConnection.dbConnector();
 		initialize();
@@ -461,9 +431,6 @@ public class HomePg extends JFrame{
 		ldDataToMtchHist("select `Match ID`,`Player1 ID`, `Player2 ID`, Date, Result, `#Games` from `matches`");
 		ldDataToPFA("select `ID`,`Name`, `#Matches`, `#Won`, `#Lost` from `player stats` INNER JOIN `players` ON `player stats`.`ID`=`players`.`Player ID`");
 	}
-	
-	
-
 	
 	@SuppressWarnings("rawtypes")
 	private void initialize() {
@@ -501,9 +468,6 @@ public class HomePg extends JFrame{
 		lblNewLabel_4_1.setBounds(96, 197, 189, 93);
 		Home.add(lblNewLabel_4_1);
 		
-		
-		
-		
 		JPanel DBManager = new JPanel();
 		tabbedPane.addTab("Manage Players", null, DBManager, null);
 		DBManager.setLayout(null);
@@ -511,7 +475,6 @@ public class HomePg extends JFrame{
 		table = new JTable();
 		TableColorCellRenderer renderer = new TableColorCellRenderer();
 		table.setDefaultRenderer(Object.class, renderer);
-		
 		
 		JScrollPane scrollPane = new JScrollPane(table);
 		scrollPane.addMouseListener(new MouseAdapter() {
@@ -629,8 +592,6 @@ public class HomePg extends JFrame{
 				comboboxP1.removeAllItems();
 				comboboxP2.removeAllItems();
 				fillCombo();
-				
-				
 			}
 		});
 		btnNewButton_1.setBounds(159, 487, 89, 23);
@@ -720,32 +681,19 @@ public class HomePg extends JFrame{
 		
 		JButton btnNewButton_10 = new JButton("Search");
 		btnNewButton_10.addActionListener(new ActionListener() {
-			
-			
 			public void actionPerformed(ActionEvent e) {
 				
 				if(rdnm.isSelected()) {
-					
-						
 					ldData("select `Player ID`,Name,Age,Height,Weight,BMI,`Racket Model`,`Racket Tension` from players where Name='"+tfsrch.getText()+"'");
-						
-
-				
 				}else if(rdage.isSelected()) {
-					
-					
 					ldData("select `Player ID`,Name,Age,Height,Weight,BMI,`Racket Model`,`Racket Tension` from players where Age='"+Integer.parseInt(tfsrch.getText())+"'");
-					
 				}else if(rdrm.isSelected()) {
 					ldData("select `Player ID`,Name,Age,Height,Weight,BMI,`Racket Model`,`Racket Tension` from players where `Racket Model`='"+tfsrch.getText()+"'");
 				}
-				
 				tfsrch.setText("");
 			}
 		});
-		
-		
-		
+			
 		btnNewButton_10.setBounds(473, 487, 89, 23);
 		DBManager.add(btnNewButton_10);
 		
@@ -777,12 +725,9 @@ public class HomePg extends JFrame{
 		
 		table_4 = new JTable();
 		
-		
-		
 		table_4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
 				
 				DefaultTableModel model =(DefaultTableModel) table_4.getModel();
 				int row = table_4.getSelectedRow();
@@ -794,13 +739,10 @@ public class HomePg extends JFrame{
 		
 		scrollPane_4.setViewportView(table_4);
 		
-		
 		JButton btnNewButton_2 = new JButton("Pie Chart Analysis");
 		btnNewButton_2.setBackground(SystemColor.activeCaption);
 		btnNewButton_2.addActionListener(new ActionListener() {
-			
-			
-			
+
 			public void actionPerformed(ActionEvent e) {
 				getPlyrName();
 				DefaultPieDataset pieDataset = new DefaultPieDataset();
@@ -813,12 +755,7 @@ public class HomePg extends JFrame{
 				frame.setSize(650,450);	
 			}
 		});
-		
-		
-		
-		
-		
-		
+
 		btnNewButton_2.setBounds(331, 33, 344, 156);
 		PerfAnalysis.add(btnNewButton_2);
 		
@@ -894,9 +831,7 @@ public class HomePg extends JFrame{
 					}					
 				}catch(Exception e1) {
 					e1.printStackTrace();
-				}
-				
-				
+				}	
 			}
 		});
 		btnNewButton_11.setBackground(SystemColor.activeCaption);
@@ -925,8 +860,7 @@ public class HomePg extends JFrame{
 		JPanel NMtch = new JPanel();
 		tabbedPane.addTab("New Match", null, NMtch, null);
 		NMtch.setLayout(null);
-		
-		
+
 		JButton btnNewButton = new JButton("Let's Play");
 		btnNewButton.setBackground(Color.LIGHT_GRAY);
 		btnNewButton.addActionListener(new ActionListener() {
@@ -1019,7 +953,6 @@ public class HomePg extends JFrame{
 		JScrollPane scrollPane_3 = new JScrollPane();
 		scrollPane_3.setBounds(27, 106, 381, 290);
 		MtchHist.add(scrollPane_3);
-		
 		
 		table_3 = new JTable();
 		scrollPane_3.setViewportView(table_3);
@@ -1214,7 +1147,6 @@ public class HomePg extends JFrame{
 		
 		
 		fillCombo2();
-		
 		
 		textField_2 = new JTextField();
 		textField_2.setBounds(479, 257, 148, 20);
