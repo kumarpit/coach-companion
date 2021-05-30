@@ -19,7 +19,7 @@ The application provides an in-built scorekeeper for the game of squash as well 
 ![statgifs](https://github.com/kumarpit/track-squash/blob/main/gifs/comments+updates.gif)
 
 # Basic Performance Analysis
-The application gives the coach basic graphical tools to get an idea of how the player performances have been over time. This allows easy indetification of patterns and progress over a long period of time.
+The application gives the coach basic graphical tools to get an idea of how the player performances have been over time. This allows easy visualization of progress over a long period of time.
 
 ![statgifs](https://github.com/kumarpit/track-squash/blob/main/gifs/piechart.gif)
 
