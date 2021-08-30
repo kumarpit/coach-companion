@@ -4,7 +4,7 @@ This application was made for a squash coach to keep track of player data and pe
 ![Java](https://img.shields.io/badge/Java-yellow) ![MySQL](https://img.shields.io/badge/MySQL-blue) ![Apache](https://img.shields.io/badge/Apache-red)
 
 # Leaderboard
-The application tracks player points, which are awarded based on the points given to the players by the coach at the end of each match. The players are then ranked on the basis of these points which helps promote competitveness.
+The application tracks player points, which are awarded by the coach at the end of each match. The players are then ranked on the basis of these points which helps promote competitveness.
 
 ![leaderboard](https://github.com/kumarpit/track-squash/blob/main/gifs/leaderboard.gif)
 
