@@ -1,4 +1,4 @@
-# SquAnalyze
+# Coach Companion
 This application was made for a squash coach to keep track of player data and performances as well as perform graphical analysis on the data to provde insights on player progress to the coach. A MySQL database is used to store all the data.
 
 ![Java](https://img.shields.io/badge/Java-yellow) ![MySQL](https://img.shields.io/badge/MySQL-blue) ![Apache](https://img.shields.io/badge/Apache-red)
