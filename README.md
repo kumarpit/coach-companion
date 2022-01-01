@@ -3,14 +3,12 @@ This application was made for a squash coach to keep track of player data and pe
 
 ![Java](https://img.shields.io/badge/Java-yellow) ![MySQL](https://img.shields.io/badge/MySQL-blue) ![Apache](https://img.shields.io/badge/Apache-red)
 
-# I desperately need to refactor this
-
 # Leaderboard
 The application tracks player points, which are awarded by the coach at the end of each match. The players are then ranked on the basis of these points which helps promote competitveness.
 
 ![leaderboard](https://github.com/kumarpit/track-squash/blob/main/gifs/leaderboard.gif)
 
-# Player Stat Management
+# Player Data Management
 The application enables the coach to keep track of player statistics such as height, weight, matches won, etc. The coach can now easily look up these statistics rather than having to go through the logbook/register he maintained before.
 
 ![statgifs](https://github.com/kumarpit/track-squash/blob/main/gifs/playerdetails.gif)
