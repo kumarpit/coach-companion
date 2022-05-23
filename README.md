@@ -1,7 +1,5 @@
 # Coach Companion
-This application was made for a squash coach to keep track of player data and performances as well as perform graphical analysis on the data to provde insights on player progress to the coach. A MySQL database is used to store all the data.
-
-![Java](https://img.shields.io/badge/Java-yellow) ![MySQL](https://img.shields.io/badge/MySQL-blue) ![Apache](https://img.shields.io/badge/Apache-red)
+This application was made for a squash coach to keep track of player data and performances as well as perform graphical analysis on the data to provde insights on player progress to the coach. Utilzed `Java`, `Swing` and `MySQL`. Built as my IB Computer Science final project. 
 
 # Leaderboard
 The application tracks player points, which are awarded by the coach at the end of each match. The players are then ranked on the basis of these points which helps promote competitveness.
